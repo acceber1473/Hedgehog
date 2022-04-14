@@ -1,5 +1,4 @@
 
-
 #include <rpcWiFi.h>
 #include <Multichannel_Gas_GMXXX.h>
 #include <Wire.h>
@@ -50,12 +49,12 @@ void setup()
 
     pinMode(ISR_servo[0].servoPin, OUTPUT);
     pinMode(ISR_servo[1].servoPin, OUTPUT);
-//    digitalWrite(ISR_servo[0].servoPin, LOW);
-//    digitalWrite(ISR_servo[1].servoPin, LOW);
+    digitalWrite(ISR_servo[0].servoPin, LOW);
+    digitalWrite(ISR_servo[1].servoPin, LOW);
 
   Serial.begin(115200); 
   
-  while (!Serial);
+//  while (!Serial);
   Serial.print(F("\nStarting SAMD_MultipleRandomServos on ")); Serial.println(BOARD_NAME);
   Serial.println(SAMD_ISR_SERVO_VERSION);
   SAMD_ISR_Servos.useTimer(USING_SAMD_TIMER);
@@ -75,6 +74,9 @@ void setup()
   }
 
   SAMD_ISR_Servos.setReadyToRun();
+  SAMD_ISR_Servos.setPosition(ISR_servo[0].servoIndex, 90);
+  SAMD_ISR_Servos.setPosition(ISR_servo[1].servoIndex, 90 );
+  
 
   delay(200);
 
@@ -148,12 +150,14 @@ void loop()
             client.println("<head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
             client.println("<link rel=\"icon\" href=\"data:,\">");
             client.println("<html>");
-            client.println("<body style = \"background-color:lightslategrey;\">");
-            client.println(no2);
-            client.println("<table>");
-            client.println("<tr><td colspan=\"3\" align=\"center\"><button class=\"button\" onmousedown=\"toggleCheckbox('forward');\" ontouchstart=\"toggleCheckbox('forward');\" onmouseup=\"toggleCheckbox('stop');\" ontouchend=\"toggleCheckbox('stop');\">Forward</button></td></tr>");
-            client.println("<tr><td align=\"center\"><button class=\"button\" onmousedown=\"toggleCheckbox('left');\" ontouchstart=\"toggleCheckbox('left');\" onmouseup=\"toggleCheckbox('stop');\" ontouchend=\"toggleCheckbox('stop');\">Left</button></td><td align=\"center\"><button class=\"button\" onmousedown=\"toggleCheckbox('stop');\" ontouchstart=\"toggleCheckbox('stop');\">Stop</button></td><td align=\"center\"><button class=\"button\" onmousedown=\"toggleCheckbox('right');\" ontouchstart=\"toggleCheckbox('right');\" onmouseup=\"toggleCheckbox('stop');\" ontouchend=\"toggleCheckbox('stop');\">Right</button></td></tr>");
-            client.println("<tr><td colspan=\"3\" align=\"center\"><button class=\"button\" onmousedown=\"toggleCheckbox('backward');\" ontouchstart=\"toggleCheckbox('backward');\" onmouseup=\"toggleCheckbox('stop');\" ontouchend=\"toggleCheckbox('stop');\">Backward</button></td></tr>");
+            client.println("<body style = \"background-color:lightslategrey;font-family: Helvetica, sans-serif\">");
+            client.println("<h1 style=\"text-align:center;color:white\">Hedgehog Remote Control</h1>");
+
+//            client.println(no2);
+            client.println("<table style=\"margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto\">");
+            client.println("<tr><td colspan=\"3\" align=\"center\"><button style=\"height:100px;width:150px\" onmousedown=\"toggleCheckbox('forward');\" ontouchstart=\"toggleCheckbox('forward');\" onmouseup=\"toggleCheckbox('stop');\" ontouchend=\"toggleCheckbox('stop');\">Forward</button></td></tr>");
+            client.println("<tr><td align=\"center\"><button style=\"height:100px;width:150px\" onmousedown=\"toggleCheckbox('left');\" ontouchstart=\"toggleCheckbox('left');\" onmouseup=\"toggleCheckbox('stop');\" ontouchend=\"toggleCheckbox('stop');\">Left</button></td><td align=\"center\"><button style=\"height:100px;width:100px\" onmousedown=\"toggleCheckbox('stop');\" ontouchstart=\"toggleCheckbox('stop');\">Stop</button></td><td align=\"center\"><button style=\"height:100px;width:150px\" onmousedown=\"toggleCheckbox('right');\" ontouchstart=\"toggleCheckbox('right');\" onmouseup=\"toggleCheckbox('stop');\" ontouchend=\"toggleCheckbox('stop');\">Right</button></td></tr>");
+            client.println("<tr><td colspan=\"3\" align=\"center\"><button style=\"height:100px;width:150px\" onmousedown=\"toggleCheckbox('backward');\" ontouchstart=\"toggleCheckbox('backward');\" onmouseup=\"toggleCheckbox('stop');\" ontouchend=\"toggleCheckbox('stop');\">Backward</button></td></tr>");
             client.println("</table>");                   
             client.println("<script>");
             client.println("function toggleCheckbox(x) {");
@@ -161,6 +165,7 @@ void loop()
             client.println("xhr.open(\"GET\", \"/\" + x, true);");
             client.println("xhr.send();");
             client.println("}");
+            
             client.println("</script>");
             client.println("</body>");
             client.println("</html>");  

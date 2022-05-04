@@ -22,6 +22,8 @@ This game is designed to be run on a Seeed WIO terminal and the following hardwa
 * To run this code you must be running the latest WIO wifi firmware and download the associated libraries. The instructions for this update can be found here https://wiki.seeedstudio.com/Wio-Terminal-Network-Overview/
 * The SAMD_ISR_Servo Library must be downloaded from here https://github.com/khoih-prog/SAMD_ISR_Servo. The patch mentioned in the readme file for the WIO terminal needs to be applied.
 * Once the prerequisites are met, The Botv1.ino file can be opened in an Arduino IDE and uploaded to the board.
+* For local KNN training, the Arduino_KNN library must be downloaded from https://www.arduino.cc/reference/en/libraries/arduino_knn/. The ZIP library can be uploaded on your local Arduino application. 
+* For Edge Impulse, please follow this PDF with instructions to set up your own training module, or clone the existing module here. 
 
 
 ### This README is a work in progress ###

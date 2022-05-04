@@ -2,7 +2,8 @@
 # Hedgehog Preservation Game
 A game developed to educate general audience - and kids in particular - to the dangers hedgehogs are facing, and the importance of trying to preserve them. A detailed description of the game experience can be found in a document in this repository.
 
-<img src="images/SideView.jpg" width="365" height="275"/> <img src="/images/BottomView.jpg" width="350" height="275"/> <img src="/images/DisassembledView.jpg" width="325" height="275"/> 
+<img align="left" src="images/SideView.jpg" width="375" height="275"/> <img align="right"
+ src="/images/BottomView.jpg" width="375" height="275"/> <img align="center" src="/images/DisassembledView.jpg" width="325" height="275"/> 
 
 ## Hardware 
 This game is designed to be run on a Seeed WIO terminal and the following hardware is required:

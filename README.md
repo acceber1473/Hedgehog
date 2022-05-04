@@ -3,10 +3,10 @@
 A game developed to educate general audience - and kids in particular - to the dangers hedgehogs are facing, and the importance of trying to preserve them. A detailed description of the game experience can be found in a document in this repository.
 
 <img align="left" src="images/SideView.jpg" width="375" height="275"/> <img align="right"
- src="/images/BottomView.jpg" width="425" height="300"/>
+ src="/images/BottomView.jpg" width="375" height="275"/>
 
 <p align = "center">
-<img align="center" src="/images/DisassembledView.jpg" width="325" height="275"/> 
+<img align="center" src="/images/DisassembledView.jpg" width="375" height="325"/> 
 </p>
 
 ## Hardware 

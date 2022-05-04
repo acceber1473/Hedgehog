@@ -4,10 +4,11 @@ A game developed to educate general audience - and kids in particular - to the d
 
 <img align="left" src="images/SideView.jpg" width="375" height="275"/> <img align="right"
  src="/images/BottomView.jpg" width="375" height="275"/>
-<br/>
+
 <p align = "center">
 <img align="center" src="/images/DisassembledView.jpg" width="325" height="275"/> 
 </p>
+
 ## Hardware 
 This game is designed to be run on a Seeed WIO terminal and the following hardware is required:
 * 1x - Seeed WIO terminal 

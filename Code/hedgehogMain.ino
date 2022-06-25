@@ -43,7 +43,8 @@ ISR_servo_t ISR_servo[] =
 
 
 
-const char *ssid = "Tufts_Wireless";
+const char *ssid = "yourNetwork";
+const char *pass = "secretPassword"; 
 //Servo lServo;
 //Servo rServo;
 int pos = 0;
@@ -112,7 +113,7 @@ void setup()
 //  Serial.print("Connecting to ");
 //  Serial.println(ssid);
 
-  WiFi.begin(ssid);
+  WiFi.begin(ssid,pass);
   tft.drawString("Connecting WiFi", 30, 140);
   while (WiFi.status() != WL_CONNECTED)
   {

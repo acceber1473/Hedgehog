@@ -1,7 +1,6 @@
 #include <rpcWiFi.h>
 #include <Multichannel_Gas_GMXXX.h>
 #include <Wire.h>
-GAS_GMXXX<TwoWire> gas;
 #include "SAMD_ISR_Servo.h"
 #include <Arduino_KNN.h>
 #include "TFT_eSPI.h"
@@ -17,6 +16,8 @@ GAS_GMXXX<TwoWire> gas;
 #define SERVO_PIN_2       A3
 
 TFT_eSPI tft;
+GAS_GMXXX<TwoWire> gas;
+
 
 #define num_Inputs 4
 #define num_Classes 5
